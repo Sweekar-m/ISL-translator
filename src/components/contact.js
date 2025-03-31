@@ -22,7 +22,7 @@ const ContactUs = () => {
           <p style={styles.role}>Developer</p>
           <p style={styles.college}>🎓 SDM Ujire</p>
           <p style={styles.class}>📚 BCA - Final Year</p>
-          <p style={styles.email}>📧 Vaishali@gmail.com</p>
+          <p style={styles.email}>📧 vaishalikotari05@gmail.com</p>
           <p style={styles.phone}>📞 +91 90085 36634</p>
         </div>
       </div>
