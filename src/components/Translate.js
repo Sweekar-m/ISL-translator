@@ -8,13 +8,16 @@ const Translate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!/^[a-zA-Z]+$/.test(alphabet)) {
+    
+    // Remove spaces from input
+    const cleanedText = alphabet.replace(/\s+/g, '');
+    
+    if (!/^[a-zA-Z]+$/.test(cleanedText)) {
       alert('Please enter only letters (A-Z or a-z). Numbers and special characters are not allowed.');
       return;
     }
 
-    const letters = alphabet.toLowerCase().split('');
+    const letters = cleanedText.toLowerCase().split('');
     const videos = letters.map((letter) => `${process.env.PUBLIC_URL}/asset/${letter.toUpperCase()}.mp4`);
     
     setVideoSrcs(videos);
@@ -48,7 +51,6 @@ const Translate = () => {
               height="315"
               autoPlay
               controls
-    
               onEnded={handleVideoEnd}
             >
               <source src={videoSrcs[currentIndex]} type="video/mp4" />
